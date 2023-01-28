@@ -1,0 +1,520 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400");
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+/* ================= VARIABLE ================ */
+:root {
+    --primary-color: hsl(9, 94%, 61%);
+    --primary-color-alt: hsl(28, 72%, 83%);
+    --second-color: #3e537c;
+    --second-color-alt: hsla(220, 33%, 36%, 65%);
+    --third-color: hsl(220, 36%, 28%);
+    --white-color: #fbfbfb;
+    --white-color-alt: hsl(12, 14%, 93%);
+    --dark-color: hsl(300, 100%, 0%);
+}
+
+/* ================= BASE ==================== */
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.bx {
+    font-size: 2.5rem;
+}
+
+.container {
+    padding: 0 2rem;
+}
+
+/* -- BODY -- */
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    background-color: var(--white-color);
+}
+
+.title{
+	text-align:center;
+	font-style:italic;
+	font-family:"Lucida Handwriting", Cursive;
+}
+
+/* ================= HEADER ================ */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    padding: 1rem 2rem;
+}
+
+.nav-items {
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 2rem;
+}
+
+.navbar{
+    text-align:center;
+}
+.nav-link {
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    position: relative;
+    background: -webkit-linear-gradient( var(--primary-color-alt), var(--primary-color) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    .nav-link::before {
+        content: "";
+        background: linear-gradient(var(--primary-color), var(--primary-color-alt));
+        width: 100%;
+        height: 0.05rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 150ms;
+    }
+
+    .nav-link:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+/*MENU*/
+.menu-toggle {
+    display: none;
+}
+
+.bx-menu,
+.bx-x {
+    cursor: pointer;
+    background: -webkit-linear-gradient( 120deg, var(--primary-color-alt), var(--primary-color) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: none !important;
+}
+
+/* ================= MAIN ================ */
+
+/* -------- HOME SECTION -------------- */
+.section-1 {
+    background-color: var(--dark-color);
+    display: grid;
+	height:100%;
+	width:100%;
+    text-align:center;
+}
+/* .home-computer-container {} */
+
+.greetings {
+    background: -webkit-linear-gradient( 120deg, var(--primary-color-alt), var(--primary-color) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 0.1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+	font-family:"Papyrus", Fantasy;
+	padding:1% 40% 10%;
+}
+
+.welcome {
+    background: -webkit-linear-gradient( 120deg, var(--primary-color-alt), var(--primary-color) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 30%;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+	font-family:"Papyrus", Fantasy;
+}
+
+.explanation {
+    background: -webkit-linear-gradient( 120deg, var(--primary-color-alt), var(--primary-color) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 1rem;
+    display:block;
+	font-size:0.8rem;
+	padding:1%;
+}
+
+.home-computer {
+	width:100%;
+	margin-top:-100px;
+}
+
+/* -------- Skillsets SECTION ------------- */
+.section-2 {
+    margin: 2rem 0;
+}
+
+.section-2 h1 {
+	position:relative;
+	float:center;
+}
+
+.Skill {
+    background-color: var(--white-color-alt);
+    display: grid;
+    margin: 2rem 0 1rem 0;
+	height:33%;
+	border:5px solid var(--white-color-alt);
+}
+
+.Skill img{
+    width:25%;
+    display:inline;
+    position:relative;
+	border:10px solid var(--white-color-alt);
+	border-bottom:2.5px solid var(--white-color-alt) !important;
+}
+
+.Skill-2 {
+	text-align:right;
+}
+
+.Skill-1 a img{
+	background-color: var(--dark-color);
+	padding: 0;
+}
+
+.Skill-1 img, .Skill-3 img {
+    float:left;
+}
+
+.Skill-2 img{
+    float:right;
+}
+
+.Skillset-title{
+	padding: 1.5rem 0 0.5rem 0;
+	text-align:center;
+	font-family:'Copperplate',Fantasy;
+	color:var(--second-color);
+}
+
+.Skillsets-description p{
+    display:inline;
+    position:relative;
+	color:var(--second-color-alt);
+}
+
+/* Projects */
+.section-3 {
+  display: grid;
+  place-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+}
+.Projects {
+  cursor: pointer;
+  background-color: var(--white-color-alt);
+  position: relative;
+  transition: 0.3s ease all;
+  width: 300px;
+  height: 280px;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.Projects img {
+  margin: 0;
+  width: 300px;
+  height: 224px;
+  object-fit: cover;
+  display: block;
+}
+
+.Projects h3 {
+  margin: 0;
+  padding: 12px 12px 48px;
+  line-height: 32px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family:"Brush Script MT", cursive;
+  text-align:center;
+  color:black;
+}
+
+.Projects::before {
+  content: "";
+  background-image: linear-gradient(
+    to bottom,
+    hsla(29, 72%, 83%, 0.438),
+    hsla(9, 94%, 61%, 0.507)
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+}
+
+.Projects .focus-content {
+  display: block;
+  padding: 8px 12px;
+}
+
+.Projects p {
+  margin: 0;
+  line-height: 1.5;
+  font-family:'Garamond', Serif;
+  color:black;
+}
+
+.Projects:hover img, .Projects:focus-within img {
+  margin-top: -100px;
+}
+
+.Projects:hover h3, .Projects:focus-within h3 {
+  padding: 0.1px 12px 0;
+}
+
+.Projects::after{
+	height:200px;
+}
+
+.focus-content p, Projects p{
+	margin-top:-10px;
+}
+
+/* Reach Me section*/
+.Reach-Me {
+    display:flex;
+    justify-content:space-evenly;
+	height:10px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 50px 2px 1px;
+    position:relative;
+}
+
+    .fa:hover {
+        opacity: 0.8;
+    }
+
+.fa-linkedin {
+    color: #007bb5;
+}
+
+.fa-instagram {
+    color: pink;
+}
+
+.fa-carousell {
+	background-image:url('image/Carousell.png');
+}
+
+.fa-facebook {
+	color:blue;
+}
+
+.fa-github {
+	color:white;
+}
+
+/* =============== FOOTER =============== */
+footer {
+    background-color:black !important;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+	text-align:center;
+}
+
+
+/* =============== MEDIA QUERIES ======= */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    /* ================= HEADER ================ */
+    header {
+        padding: 0.5rem 0.5rem;
+        margin: 0 1rem;
+    }
+
+    nav ul {
+        height: 150px !important;
+        flex-direction: column !important;
+        display: block !important;
+    }
+	
+	.explanation {
+		line-height:0.1rem;
+	}
+    /* /* MENU */ */
+    /* .menu-toggle { */
+        /* display: block; */
+    /* } */
+
+    /* .bx-menu { */
+        /* display: block !important; */
+    /* } */
+
+    /* .show-bx { */
+        /* display: block !important; */
+    /* } */
+
+    /* .hide-bx { */
+        /* display: none !important; */
+    /* } */
+	
+	.Skill {
+		height:40%;
+	}
+	
+}
+
+@media (min-width: 769px) {
+    header {
+        padding: 1rem 5rem;
+    }
+    /* ================= MAIN ================ */
+
+    /* -------- Self-introduction SECTION -------------- */
+    .section-1 {
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        padding: 10rem 5rem 0 5rem;
+    }
+
+    .greetings {
+        max-width: 30rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .welcome {
+        max-width: 20rem;
+        font-size: 1.3rem;
+    }
+    /* -------- Skillsets SECTION ------------- */
+    .section-2 {
+        margin: 2rem 5rem;
+    }
+
+    .Skillsets {
+        margin: 5rem 0;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-rows: auto auto;
+    }
+
+    .Skill-1 {
+        grid-template-areas: "offer-1-img offer-desc-1";
+    }
+
+        .Skill-1 img {
+            background-color: var(--dark-color);
+            padding: 2rem 0;
+        }
+
+    .Skill-2 {
+        grid-template-areas: "offer-desc-2 offer-2-img";
+    }
+
+    .Skill-1-img {
+        grid-area: offer-1-img;
+    }
+
+    .Skill-2-img {
+        grid-area: offer-2-img;
+    }
+
+    .Skill-desc-1 {
+        grid-area: offer-desc-1;
+    }
+
+    .Skill-desc-2 {
+        grid-area: offer-desc-2;
+    }
+
+    .Skill-description .offer-title {
+        font-size: 1.9rem;
+        padding: 1.5rem 0 0.5rem 0;
+    }
+
+    .Skill-description .offer-hook {
+        max-width: 30rem;
+    }
+
+    .Skill-description {
+        background-color: var(--white-color-alt);
+        padding: 2rem 1rem;
+    }
+
+        .Skill-description .Skill-title {
+            padding: 0.5rem 0 1rem 0;
+        }
+
+        .Skill-description .cart-btn {
+            margin: 2rem 0 0.5rem 0;
+        }
+    /* --------  Projects ----------- */
+    .section-3 {
+        gap: 5rem;
+    }
+
+    .Projects::before {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 300ms;
+    }
+
+    .Projects:hover::before {
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: transform 300ms;
+    }
+
+    /* -------- Reach Me SECTION ----------- */
+    .section-4 {
+        margin: 5rem 0;
+    }
+    
+
+    .copyright {
+        color: hsla(0, 0%, 98%, 0.747);
+        padding: 1rem 0;
+        font-size: 0.8rem;
+    }
+
+        .copyright b {
+            font-size: 0.7rem;
+        }
+}
