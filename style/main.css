@@ -100,7 +100,7 @@ a.active, a:hover{
 .checkbtn {
     float:right;
     line-height:80px;
-    margin;right:40px;
+    margin-right:40px;
     cursor:pointer;
     display:none;
 }
@@ -235,7 +235,7 @@ a.active, a:hover{
 	border-bottom:2.5px solid var(--white-color-alt) !important;
 }
 
-.Skill-2 {
+.Skill-2, .Skill-4 {
 	text-align:right;
 }
 
@@ -248,7 +248,7 @@ a.active, a:hover{
     float:left;
 }
 
-.Skill-2 img{
+.Skill-2 img, .Skill-4 img {
     float:right;
 }
 
