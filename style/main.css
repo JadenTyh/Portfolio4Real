@@ -84,9 +84,9 @@ body {
 }
 
 .title{
-	text-align:center;
-	font-style:italic;
-	font-family:"Lucida Handwriting", Cursive;
+    text-align:center;
+    font-style:italic;
+    font-family:"Lucida Handwriting", Cursive;
 }
 
 /* ================= HEADER ================ */
@@ -195,8 +195,8 @@ a.active, a:hover{
 .section-1 {
     background-color: var(--dark-color);
     display: grid;
-	height:100%;
-	width:100%;
+    height:100%;
+    width:100%;
     text-align:center;
 }
 /* .home-computer-container {} */
@@ -208,8 +208,8 @@ a.active, a:hover{
     margin-top: 0.1rem;
     font-size: 2.5rem;
     font-weight: 600;
-	font-family:"Papyrus", Fantasy;
-	padding:1% 40% 10%;
+    font-family:"Papyrus", Fantasy;
+    padding:1% 40% 10%;
 }
 
 .welcome {
@@ -220,7 +220,7 @@ a.active, a:hover{
     font-size: 1.7rem;
     font-weight: 400;
     line-height: 1.8rem;
-	font-family:"Papyrus", Fantasy;
+    font-family:"Papyrus", Fantasy;
 }
 
 .explanation {
@@ -229,8 +229,8 @@ a.active, a:hover{
     -webkit-text-fill-color: transparent;
     margin-top: 1rem;
     display:block;
-	font-size:0.8rem;
-	padding:1%;
+    font-size:0.8rem;
+    padding:1%;
 }
 
 .explanation a {
@@ -238,9 +238,13 @@ a.active, a:hover{
 }
 
 .home-computer {
-	width:100%;
-	margin-top:-100px;
+    width:100%;
+    margin-top:-100px;
 }
+
+/* Optional fade effect for featured photo (no visual change unless JS toggles) */
+#feature-photo { transition: opacity .6s ease; }
+.feature-photo--fade { opacity: 0; }
 
 /* -------- Skillsets SECTION ------------- */
 .section-2 {
@@ -248,33 +252,33 @@ a.active, a:hover{
 }
 
 .section-2 h1 {
-	position:relative;
-	float:center;
+    position:relative;
+    float:center;
 }
 
 .Skill {
     background-color: var(--white-color-alt);
     display: grid;
     margin: 2rem 0 1rem 0;
-	height:auto;
-	border:5px solid var(--white-color-alt);
+    height:auto;
+    border:5px solid var(--white-color-alt);
 }
 
 .Skill img{
     width:25%;
     display:inline;
     position:relative;
-	border:10px solid var(--white-color-alt);
-	border-bottom:2.5px solid var(--white-color-alt) !important;
+    border:10px solid var(--white-color-alt);
+    border-bottom:2.5px solid var(--white-color-alt) !important;
 }
 
 .Skill-2, .Skill-4 {
-	text-align:right;
+    text-align:right;
 }
 
 .Skill-1 a img{
-	background-color: var(--dark-color);
-	padding: 0;
+    background-color: var(--dark-color);
+    padding: 0;
 }
 
 .Skill-1 img, .Skill-3 img {
@@ -286,16 +290,16 @@ a.active, a:hover{
 }
 
 .Skillset-title{
-	padding: 1.5rem 0 0.5rem 0;
-	text-align:center;
-	font-family:'Copperplate',Fantasy;
-	color:var(--second-color);
+    padding: 1.5rem 0 0.5rem 0;
+    text-align:center;
+    font-family:'Copperplate',Fantasy;
+    color:var(--second-color);
 }
 
 .Skillsets-description p{
     display:inline;
     position:relative;
-	color:var(--second-color-alt);
+    color:var(--second-color-alt);
 }
 
 /* Projects */
@@ -375,16 +379,18 @@ a.active, a:hover{
 }
 
 .Projects::after{
-	height:200px;
+  height:200px;
 }
 
 .focus-content p, Projects p{
-	margin-top:-10px;
+  margin-top:-10px;
 }
 
 /* Reach Me section*/
+.section-4 {
+}
 .Reach-Me {
-	height:100px;
+    height:100px;
     margin-top:50px;
     margin-bottom:10px;
     padding:0;
@@ -418,15 +424,15 @@ a.active, a:hover{
 }
 
 .fa-carousell {
-	background-image:url('image/Carousell.png');
+    background-image:url('image/Carousell.png');
 }
 
 .fa-facebook {
-	color:blue;
+    color:blue;
 }
 
 .fa-github {
-	color:white;
+    color:white;
 }
 
 .copyright {
@@ -496,12 +502,12 @@ footer {
         z-index:-1;
     }
 
-	.explanation {
-		line-height:1rem;
+    .explanation {
+        line-height:1rem;
         padding:1%;
         margin-left:1px;
         z-index:-1;
-	}
+    }
     /* /* MENU */ */
     /* .menu-toggle { */
         /* display: block; */
@@ -518,10 +524,10 @@ footer {
     /* .hide-bx { */
         /* display: none !important; */
     /* } */
-	
-	.Skill {
-		height:40%;
-	}
+    
+    .Skill {
+        height:40%;
+    }
 
     .Skillset-title {
         padding:1%;
@@ -623,64 +629,6 @@ footer {
     .section-2 {
         margin: 2rem 5rem;
     }
-
-    .Skillsets {
-        margin: 5rem 0;
-        align-items: center;
-        justify-content: space-between;
-        grid-template-rows: auto auto;
-    }
-
-    .Skill-1 {
-        grid-template-areas: "offer-1-img offer-desc-1";
-    }
-
-        .Skill-1 img {
-            background-color: var(--dark-color);
-            padding: 2rem 0;
-        }
-
-    .Skill-2 {
-        grid-template-areas: "offer-desc-2 offer-2-img";
-    }
-
-    .Skill-1-img {
-        grid-area: offer-1-img;
-    }
-
-    .Skill-2-img {
-        grid-area: offer-2-img;
-    }
-
-    .Skill-desc-1 {
-        grid-area: offer-desc-1;
-    }
-
-    .Skill-desc-2 {
-        grid-area: offer-desc-2;
-    }
-
-    .Skill-description .offer-title {
-        font-size: 1.9rem;
-        padding: 1.5rem 0 0.5rem 0;
-    }
-
-    .Skill-description .offer-hook {
-        max-width: 30rem;
-    }
-
-    .Skill-description {
-        background-color: var(--white-color-alt);
-        padding: 2rem 1rem;
-    }
-
-        .Skill-description .Skill-title {
-            padding: 0.5rem 0 1rem 0;
-        }
-
-        .Skill-description .cart-btn {
-            margin: 2rem 0 0.5rem 0;
-        }
     /* --------  Projects ----------- */
     .section-3 {
         gap: 5rem;

@@ -324,6 +324,59 @@ copyright, .copyright {
   font-size: 14px;
 }
 
+/* Featured photo rotator styles */
+#feature-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  transition: opacity .6s ease;
+  opacity: 1;
+}
+
+.feature-photo--fade {
+  opacity: 0;
+}
+
+/* Featured photo rotator (pure CSS, no JS) */
+.image.feature-rotator {
+  position: relative;
+  aspect-ratio: 16 / 9;            /* keeps a nice, responsive height */
+  overflow: hidden;
+  border-radius: 16px;              /* matches existing aesthetics */
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.image.feature-rotator img {
+  position: absolute;
+  inset: 0;                         /* top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: featureFade 15s infinite ease-in-out;
+}
+
+/* Stagger each photo by 5s */
+.image.feature-rotator img:nth-child(1) { animation-delay: 0s;  }
+.image.feature-rotator img:nth-child(2) { animation-delay: 5s;  }
+.image.feature-rotator img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes featureFade {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; }  /* quick fade in */
+  30%  { opacity: 1; }  /* stay visible ~5s total per image over 15s cycle */
+  34%  { opacity: 0; }  /* fade out */
+  100% { opacity: 0; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .image.feature-rotator img { animation: none; }
+  .image.feature-rotator img:not(:first-child) { display: none; }
+}
+
 /* Responsive */
 @media (max-width: 980px) {
   .container {
@@ -342,4 +395,21 @@ copyright, .copyright {
 @media (max-width: 560px) {
   .header-area { top: 10px; }
   .btn-primary-cta { width: 100%; text-align: center; }
+}
+
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 768px) {
+  .pretty-table {
+    min-width: 720px;
+    width: max-content;
+    white-space: nowrap;
+  }
+}
+.table-scroll:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }

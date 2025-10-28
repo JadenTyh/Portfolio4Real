@@ -32,9 +32,11 @@
       <a href="#Get-started" class="btn-primary-cta">Book a session</a>
     </div>
 
-    <div class="image">
-      <img src="mytennispic.jpg" alt="Jaden tennis coaching">
-    </div>
+    <div class="image feature-rotator" aria-label="Featured tennis photos">
+		<img src="J_TENNIS_1.jpg" alt="Image 1">
+		<img src="J_TENNIS_2.JPG" alt="Image 2">
+		<img src="J_TENNIS_3.JPG" alt="Image 3">
+	</div>
   </div>
 
   <section id='Credentials' class="section">
@@ -52,30 +54,38 @@
   <section id='Offer' class="section">
     <div class="section-inner">
       <h2 class="section-title">What I can offer</h2>
+
+      <!-- Card shell (keeps your existing aesthetics) -->
       <div class="table-card">
-        <table class="table table-reflow pretty-table">
-          <thead>
-            <tr>
-              <th>Package</th>
-              <th>Sparring</th>
-              <th>Private Lesson (1 pax)</th>
-              <th>Private Lesson (2 pax)</th>
-              <th>Group Lesson (3 pax)</th>
-              <th>Group Lesson (4 pax)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Fees</th>
-              <td><strong>$70/hr</strong></td>
-              <td><strong>$90/hr</strong></td>
-              <td><strong>$120/hr</strong></td>
-              <td><strong>$135/hr</strong></td>
-              <td><strong>$160/hr</strong></td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- New: horizontal scroll container -->
+        <div class="table-scroll" role="region" aria-label="Pricing table" tabindex="0"
+             style="overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch;">
+          <!-- Set a min-width so columns don't squish on small screens -->
+          <table class="table table-reflow pretty-table" style="min-width: 720px; width: max-content; white-space: nowrap;">
+            <thead>
+              <tr>
+                <th>Package</th>
+                <th>Sparring</th>
+                <th>Private Lesson (1 pax)</th>
+                <th>Private Lesson (2 pax)</th>
+                <th>Group Lesson (3 pax)</th>
+                <th>Group Lesson (4 pax)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Fees</th>
+                <td><strong>$70/hr</strong></td>
+                <td><strong>$90/hr</strong></td>
+                <td><strong>$120/hr</strong></td>
+                <td><strong>$135/hr</strong></td>
+                <td><strong>$160/hr</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
     </div>
   </section>
 
