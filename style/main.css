@@ -508,22 +508,6 @@ footer {
         margin-left:1px;
         z-index:-1;
     }
-    /* /* MENU */ */
-    /* .menu-toggle { */
-        /* display: block; */
-    /* } */
-
-    /* .bx-menu { */
-        /* display: block !important; */
-    /* } */
-
-    /* .show-bx { */
-        /* display: block !important; */
-    /* } */
-
-    /* .hide-bx { */
-        /* display: none !important; */
-    /* } */
     
     .Skill {
         height:40%;
@@ -555,10 +539,6 @@ footer {
     .checkbtn{
         display:block;
     }
-    
-    /*.fa-close {
-        display:none !important;
-    }*/
 
     .nav-items {
         position:relative;
@@ -586,20 +566,6 @@ footer {
         width:100%;
         height:100vh;
     }
-
-    /*#check1:checked ~ .fa-close {
-        display:block;
-    }
-
-    #check2:checked ~ ul {
-        right:-100%;
-    } */
-
-    /*section {
-        background:url('Rainbow color computer.jpg') no-repeat;
-        background-size:cover;
-        height:calc(100vh - 800px);
-    }*/
 }
 
 @media only screen and (min-width: 769px) {
