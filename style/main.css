@@ -281,11 +281,11 @@ a.active, a:hover{
     padding: 0;
 }
 
-.Skill-1 img, .Skill-3 img, .Skill-5 img {
+.Skill-1 img, .Skill-3 img, .Skill-5 img, .Skill-7 img {
     float:left;
 }
 
-.Skill-2 img, .Skill-4 img {
+.Skill-2 img, .Skill-4 img, .Skill-6 img {
     float:right;
 }
 
