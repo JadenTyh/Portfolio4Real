@@ -273,7 +273,7 @@ a.active, a:hover{
 }
 
 .Skill-2, .Skill-4 {
-    text-align:right;
+    text-align:left;
 }
 
 .Skill-1 a img{
@@ -281,7 +281,7 @@ a.active, a:hover{
     padding: 0;
 }
 
-.Skill-1 img, .Skill-3 img {
+.Skill-1 img, .Skill-3 img, .Skill-5 img {
     float:left;
 }
 
