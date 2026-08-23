@@ -1,0 +1,18 @@
+<!-- src/app/components/projects/projects.component. html -->
+\<h1 class="title">My projects</h1>
+<section id="Projects" class="container section-3">
+  <a 
+    *ngFor="let project of projects" 
+    [href]="project.projectUrl" 
+    target="_blank" 
+    class="project project-tile"
+  >
+    <div class="Projects Projects-1">
+      <img [class]="'project-image ' + project.imageClass" [src]="project.imageUrl" [alt]="project.title">
+      <h3><strong>{{ project.title }}</strong></h3>
+      <div class="focus-content">
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+  </a>
+</section>

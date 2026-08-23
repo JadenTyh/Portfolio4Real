@@ -1,0 +1,21 @@
+<!-- src/app/components/navigation/navigation.component.html -->
+<header>
+  <nav class="navbar">
+    <input 
+      type="checkbox" 
+      id="check" 
+      [checked]="isMenuOpen"
+      (change)="toggleMenu()"
+    >
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+    </label>
+    <i class="fa fa-plug"></i>
+    <ul class="nav-items">
+      <li class="nav-item"><a routerLink="/home" class="nav-link">Home</a></li>
+      <li class="nav-item"><a routerLink="/skills" class="nav-link">Skillsets</a></li>
+      <li class="nav-item"><a routerLink="/projects" class="nav-link">Projects</a></li>
+      <li class="nav-item"><a href="#Reach-Me" class="nav-link">Reach Me</a></li>
+    </ul>
+  </nav>
+</header>

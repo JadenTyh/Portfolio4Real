@@ -1,0 +1,18 @@
+<!-- src/app/components/home/home.component. html -->
+<section id="Self-introduction" class="section-1">
+  <div class="Self-introduction">
+    <h1 class="greetings">{{ greeting }}</h1>
+      <h2 class="welcome">{{ welcomeMessage }}</h2>
+    <h4 class="explanation">
+      Click here for my <a [href]="resumeLink" target="_blank">resume</a>
+    </h4>
+  </div>
+  <div class="home-computer-container">
+    <img 
+      id="feature-photo" 
+      class="home-computer home-img" 
+      [src]="featureImage" 
+      alt="a computer in dark with shadow"
+    >
+  </div>
+</section>

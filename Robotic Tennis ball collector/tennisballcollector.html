@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomous Tennis Ball Collector — ROS 2 &amp; Computer Vision</title>
+<link rel="stylesheet" href="tennisballcollector.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <div class="brand"><span class="dot" aria-hidden="true"></span> Robotic Tennis ball Roller</div>
+    <div class="navlinks">
+      <a href="#demo">Demo</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#milestones">Progress</a>
+      <!-- <a href="#code">Code</a> -->
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="status-pill"><span class="ping" aria-hidden="true"></span> In Active Development</div>
+    <h1>Autonomous Tennis Ball <span class="accent">Collector</span></h1>
+    <p class="tagline">Bridging real-time computer vision and autonomous state-machine navigation to automate court cleanup.</p>
+
+    <div class="badge-row">
+      <span class="badge">ROS 2</span>
+      <span class="badge">Python 3</span>
+      <span class="badge">OpenCV</span>
+      <!-- <span class="badge">Differential Drive Kinematics</span>
+      <span class="badge">Finite State Machines</span> -->
+      <span class="badge">Hardware Serial Bridge</span>
+    </div>
+
+    <div class="cta-row">
+      <!-- <a class="btn btn-primary" href="https://github.com/your-username/tennis-ball-collector" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.15c-3.16.69-3.83-1.36-3.83-1.36-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.65 1.24 3.3.95.1-.73.4-1.24.72-1.53-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.66 5.31-5.19 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.79.55 4.51-1.51 7.77-5.76 7.77-10.78C23.5 5.74 18.27.5 12 .5Z"/></svg>
+        View on GitHub
+      </a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        LinkedIn
+      </a> -->
+    </div>
+  </div>
+</header>
+
+<!-- VISION -->
+<section id="vision" style="padding: 4rem 0; background: var(--bg-alt);">
+  <div class="wrap">
+    <div class="eyebrow">The Goal</div>
+    <div class="section-head" style="margin-bottom:36px; text-align: center;">
+      <h2>Target Product Concept</h2>
+    </div>
+    
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <img src="Prototype robotic tennis ball roller.png" alt="Autonomous Robotic Tennis Ball Roller Concept" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-height: 600px;">
+      <p style="margin-top: 16px; font-size: 0.95rem; line-height: 1.5; color: #666; max-width: 700px; text-align: center;">
+        <strong>The Prototype Product:</strong> A fully autonomous, self-balancing robotic tennis ball collector. Equipped with an advanced visual sensor suite and automated propulsion, this design completely eliminates the need for manual rolling on the court.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="demo">
+  <div class="wrap">
+    <div class="eyebrow">Latest Progress — Live Demo</div>
+    <div class="section-head" style="margin-bottom:36px;">
+      <h2>Watch It Search, Approach, and Collect</h2>
+    </div>
+
+    <div class="video-frame">
+      <span class="corner tl" aria-hidden="true"></span>
+      <span class="corner tr" aria-hidden="true"></span>
+      <span class="corner bl" aria-hidden="true"></span>
+      <span class="corner br" aria-hidden="true"></span>
+      <span class="video-tag"><span aria-hidden="true"></span> REC — SIM FEED</span>
+      <!-- Drop your recording in the project folder and update the src below -->
+      <video controls preload="metadata" poster="demo_poster.jpg">
+        <source src="Auto Tennis ball roller collector.mov" type="video/mp4">
+        Your browser doesn't support embedded video — the recording is at <code>latest_demo.mp4</code>.
+      </video>
+    </div>
+    <p class="video-caption">
+      <strong>What this shows:</strong> a full autonomous cycle running in the custom 2D simulator. The robot rotates in
+      <code>SEARCH</code> until the target enters its field of view, closes distance during <code>APPROACH</code> using
+      proportional steering on the ball's pixel offset, completes a timed <code>COLLECT</code> maneuver, then automatically
+      respawns a new target and repeats — validated across multiple consecutive cycles with no manual intervention.
+    </p>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <div class="wrap">
+    <div class="eyebrow">System Architecture</div>
+    <div class="section-head">
+      <h2>A Closed Feedback Loop, Not a Pipeline</h2>
+      <p>Three ROS 2 nodes, connected only by topic name and message type — none of them aware of how the others are implemented.</p>
+    </div>
+
+    <div class="loop-wrap">
+      <div class="node-card">
+        <span class="node-role">Sense</span>
+        <h3><code>mock_camera</code></h3>
+        <p>Captures a first-person visual feed and calculates 2D simulation geometry — robot pose, target position, and field-of-view intersection — every 20Hz timer tick.</p>
+        <span class="topic-tag">pub /image_raw</span>
+      </div>
+
+      <div class="flow-connector" aria-hidden="true">
+        <span class="flow-dot"></span>
+        <svg viewBox="0 0 44 20"><path d="M2 10H38M38 10L30 4M38 10L30 16" stroke="var(--border)" stroke-width="1.5" fill="none"/></svg>
+      </div>
+
+      <div class="node-card">
+        <span class="node-role">Perceive</span>
+        <h3><code>vision_node</code></h3>
+        <p>Applies HSV colour segmentation and contour analysis to isolate the tennis ball, then computes its normalized pixel offset and apparent radius.</p>
+        <span class="topic-tag">pub /ball_detection</span>
+      </div>
+
+      <div class="flow-connector" aria-hidden="true">
+        <span class="flow-dot" style="animation-delay:0.7s"></span>
+        <svg viewBox="0 0 44 20"><path d="M2 10H38M38 10L30 4M38 10L30 16" stroke="var(--border)" stroke-width="1.5" fill="none"/></svg>
+      </div>
+
+      <div class="node-card">
+        <span class="node-role">Decide</span>
+        <h3><code>nav_node</code></h3>
+        <p>Runs a 3-state FSM — <code>SEARCH → APPROACH → COLLECT</code> — converting target offset into proportional steering and forward velocity commands.</p>
+        <span class="topic-tag">pub /cmd_vel</span>
+      </div>
+    </div>
+
+    <div class="loop-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.6v-1a4 4 0 0 1 4-4h13.9M7 21.9l-4-4 4-4"/><path d="M21 11.4v1a4 4 0 0 1-4 4H3.1"/></svg>
+      <span><code>/cmd_vel</code> loops back into <code>mock_camera</code>, updating the simulated pose on the next tick — closing the loop every cycle.</span>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section id="milestones">
+  <div class="wrap">
+    <div class="eyebrow">Development Log</div>
+    <div class="section-head">
+      <h2>Progress So Far</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item done">
+        <span class="t-dot"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="t-label">Custom 2D Kinematics &amp; Camera Simulation Engine<span class="t-status">DONE</span></span>
+      </div>
+      <div class="t-item done">
+        <span class="t-dot"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="t-label">OpenCV Colour Segmentation &amp; Target Tracking<span class="t-status">DONE</span></span>
+      </div>
+      <div class="t-item done">
+        <span class="t-dot"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="t-label">3-State FSM Navigation &amp; Dynamic Speed Scaling<span class="t-status">DONE</span></span>
+      </div>
+      <div class="t-item done">
+        <span class="t-dot"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="t-label">Closed-Loop <code>/ball_collected</code> Trigger System<span class="t-status">DONE</span></span>
+      </div>
+      <div class="t-item pending">
+        <span class="t-dot"></span>
+        <span class="t-label">Physical Chassis Integration &amp; Serial Motor Driver<span class="t-status">NEXT UP</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="code">
+  <div class="wrap">
+    <div class="eyebrow">Under The Hood</div>
+    <div class="section-head">
+      <h2>The State Machine, In Code</h2>
+      <p>The core FSM logic driving <code>nav_node</code>, alongside the perception and hardware-bridge nodes it talks to.</p>
+    </div>
+
+    <div class="code-card">
+      <div class="code-tabs" role="tablist">
+        <button class="code-tab active" data-tab="nav" role="tab" aria-selected="true">nav_node.py — FSM core</button>
+        <button class="code-tab" data-tab="vision" role="tab" aria-selected="false">vision_node.py — detection</button>
+        <button class="code-tab" data-tab="serial" role="tab" aria-selected="false">serial_bridge.py — hardware</button>
+      </div>
+      <div class="code-titlebar" aria-hidden="true">
+        <span class="tl-dot" style="background:#F97066"></span>
+        <span class="tl-dot" style="background:#FFB86B"></span>
+        <span class="tl-dot" style="background:#7FD1AE"></span>
+      </div>
+
+      <div class="code-panel active" data-panel="nav">
+<pre><code class="language-python">def cb(self, msg: BallDetection):
+    Kp   = self.get_parameter('Kp_angular').value
+    fwd  = self.get_parameter('approach_speed').value
+    thr  = self.get_parameter('collect_radius_threshold').value
+    cmd  = Twist()
+
+    if self.state == 'SEARCH':
+        if msg.detected:
+            self.state = 'APPROACH'
+        else:
+            cmd.angular.z = self.get_parameter('search_angular_speed').value
+
+    elif self.state == 'APPROACH':
+        if not msg.detected:
+            self.lost_count += 1
+            if self.lost_count &gt; 20:          # ~2s with no detection
+                self.state = 'SEARCH'
+                self.lost_count = 0
+        else:
+            self.lost_count = 0
+            if msg.radius &gt; thr:               # close enough to collect
+                self.state = 'COLLECT'
+            else:
+                cmd.linear.x  = fwd
+                cmd.angular.z = -Kp * msg.offset_norm
+
+    elif self.state == 'COLLECT':
+        cmd.linear.x = fwd * 2.0
+        self.collect_count += 1
+        if self.collect_count &gt;= 30:           # ~1s of collecting
+            self.ball_collected_pub.publish(Empty())
+            self.state = 'SEARCH'
+            self.collect_count = 0
+
+    self.pub.publish(cmd)
+</code></pre>
+      </div>
+
+      <div class="code-panel" data-panel="vision">
+<pre><code class="language-python">def cb(self, msg: Image):
+    frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+    h, w  = frame.shape[:2]
+
+    hsv  = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    mask = cv2.inRange(hsv, self.lower, self.upper)
+    mask = cv2.erode(mask, None, iterations=2)
+    mask = cv2.dilate(mask, None, iterations=2)
+
+    contours, _ = cv2.findContours(
+        mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    out = BallDetection()
+    out.detected = False
+    if contours:
+        c = max(contours, key=cv2.contourArea)
+        if cv2.contourArea(c) &gt; self.min_area:
+            (cx, cy), radius = cv2.minEnclosingCircle(c)
+            out.detected    = True
+            out.pixel_x     = float(cx)
+            out.radius      = float(radius)
+            out.offset_norm = (cx - w / 2.0) / (w / 2.0)
+
+    self.pub.publish(out)
+</code></pre>
+      </div>
+
+      <div class="code-panel" data-panel="serial">
+<pre><code class="language-python">def cb(self, msg: Twist):
+    pkt = f'CMD:{msg.linear.x:.3f}:{msg.angular.z:.3f}\n'
+
+    if self.ser and self.ser.is_open:
+        self.ser.write(pkt.encode('utf-8'))       # → ESP32 over USB
+    else:
+        self.get_logger().info(f'[DRY RUN] &rarr; {pkt.strip()}')
+</code></pre>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <footer>
+  <div class="wrap">
+    <p>~/tennis_robot_ws — built one topic at a time</p>
+    <div class="foot-links">
+      <a href="https://github.com/your-username/tennis-ball-collector" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer> -->
+
+<script>
+  document.querySelectorAll('.code-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var target = tab.getAttribute('data-tab');
+      document.querySelectorAll('.code-tab').forEach(function(t){
+        t.classList.toggle('active', t === tab);
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+      document.querySelectorAll('.code-panel').forEach(function(p){
+        p.classList.toggle('active', p.getAttribute('data-panel') === target);
+      });
+    });
+  });
+
+  if (window.Prism) { Prism.highlightAll(); }
+</script>
+
+</body>
+</html>

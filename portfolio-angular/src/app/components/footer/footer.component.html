@@ -1,0 +1,14 @@
+<!-- src/app/components/footer/footer.component.html -->
+<footer>
+  <div class="container section-4 Reach-Me" id="Reach-Me">
+    <a 
+      *ngFor="let link of socialLinks"
+      [href]="link. url" 
+      target="_blank" 
+      class="fa"
+      [ngClass]="link.icon"
+      [attr.aria-label]="link. platform"
+    ></a>
+  </div>
+  <div class="copyright">copyright © {{ currentYear }} By JadenTyh</div>
+</footer>

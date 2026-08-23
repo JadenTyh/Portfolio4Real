@@ -1,0 +1,17 @@
+<!-- src/app/components/skillsets/skillsets.component.html -->
+<section id="Skillsets" class="container section-2 Skillsets">
+  <h1 class="title">IT fields I've explored</h1>
+
+  <!-- Use *ngFor to loop through skills -->
+  <div class="Skill" *ngFor="let skill of skills; let i = index" [ngClass]="'Skill-' + (i + 1)">
+    <span>
+      <a [href]="skill.certificationUrl" target="_blank" class="project project-tile">
+        <img class="project-image" [src]="skill.imageUrl" [alt]="skill.title">
+      </a>
+      <div class="Skillsets-description">
+        <h2 class="Skillset-title">{{ skill.title }}</h2>
+        <p>{{ skill.description }}</p>
+      </div>
+    </span>
+  </div>
+</section>

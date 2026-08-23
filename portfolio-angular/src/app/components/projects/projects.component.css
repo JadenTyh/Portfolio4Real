@@ -1,0 +1,128 @@
+/* Projects */
+.section-3 {
+  display: grid;
+  place-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+}
+.Projects {
+  cursor: pointer;
+  background-color: var(--white-color-alt);
+  position: relative;
+  transition: 0.3s ease all;
+  width: 300px;
+  height: 280px;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.Projects img {
+  margin: 2%;
+  padding:2%;
+  width: 300px;
+  height: 224px;
+  object-fit: cover;
+  display: block;
+}
+
+.Projects h3 {
+  margin: 0;
+  padding: 12px 12px 48px;
+  line-height: 32px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family:"Brush Script MT", cursive;
+  text-align:center;
+  color:black;
+}
+
+.Projects::before {
+  content: "";
+  background-image: linear-gradient(
+    to bottom,
+    hsla(29, 72%, 83%, 0.438),
+    hsla(9, 94%, 61%, 0.507)
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+}
+
+.Projects .focus-content {
+  display: block;
+  padding: 8px 12px;
+}
+
+.Projects p {
+  margin: 0;
+  line-height: 1.5;
+  font-family:'Garamond', Serif;
+  color:black;
+}
+
+.Projects:hover img, .Projects:focus-within img {
+  margin-top: -100px;
+}
+
+.Projects:hover h3, .Projects:focus-within h3 {
+  padding: 0.1px 12px 0;
+}
+
+.Projects::after{
+  height:200px;
+}
+
+.focus-content p, Projects p{
+  margin-top:-10px;
+}
+
+@media only screen and (min-width: 769px) {
+    header {
+        padding: 1rem 5rem;
+    }
+    /* ================= MAIN ================ */
+
+    /* -------- Self-introduction SECTION -------------- */
+    .section-1 {
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        padding: 10rem 5rem 0 5rem;
+    }
+
+    .greetings {
+        max-width: 30rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .welcome {
+        max-width: 20rem;
+        font-size: 1.3rem;
+    }
+    /* -------- Skillsets SECTION ------------- */
+    .section-2 {
+        margin: 2rem 5rem;
+    }
+    /* --------  Projects ----------- */
+    .section-3 {
+        gap: 5rem;
+    }
+
+    .Projects::before {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 300ms;
+    }
+
+    .Projects:hover::before {
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: transform 300ms;
+    }
+}

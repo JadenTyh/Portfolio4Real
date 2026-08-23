@@ -1,0 +1,22 @@
+/* -------- HOME SECTION -------------- */
+.section-1 {
+    background-color: var(--dark-color);
+    display: grid;
+    height:100%;
+    width:100%;
+    text-align:center;
+}
+
+@media only screen and (min-width: 769px) {
+    header {
+        padding: 1rem 5rem;
+    }
+    /* ================= MAIN ================ */
+
+    /* -------- Self-introduction SECTION -------------- */
+    .section-1 {
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        padding: 10rem 5rem 0 5rem;
+    }
+}

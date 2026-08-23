@@ -220,12 +220,10 @@ body {
 .pretty-table th,
 .pretty-table td {
   padding: 14px 16px;
+  color:#eaf2ff;
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 .pretty-table tbody tr:nth-child(even) {
-  background: white;
-}
-.pretty-table tbody tr:hover {
   background: white;
 }
 
@@ -247,6 +245,7 @@ body {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
+  color:#eaf2ff;
 }
 .form-control, select, textarea {
   width: 100%;
