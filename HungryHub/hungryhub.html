@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HungryHub · Restaurant Peer Intelligence</title>
+  <link rel="stylesheet" href="hungryhub.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Jaden &mdash; <span>HungryHub</span></div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#contribution">My Work</a></li>
+    <li><a href="#bangkok">Bangkok</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">SMU IS455 Data Analytics Project &nbsp;·&nbsp; HungryHub Thailand &nbsp;·&nbsp; Jan 2026</div>
+    <h1 class="hero-title">
+      Restaurant <span class="accent">Peer Intelligence</span><br>
+      for <span class="teal">Smarter</span> Marketing
+    </h1>
+    <p class="hero-sub">
+      I bidded for this module without knowing anyone else in the class. 
+      I was blessed with 4 other teammates who not only excelled at doing their best, but were a fun bunch to be around. 
+      Even though we spent alot of time working on the project, we also had some good memories together. 
+      A data-driven framework that identifies high-potential restaurants, clusters them by theme, and recommends
+      evidence-backed marketing strategies learned from similar high-performing peers.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Python</span>
+      <span class="tag">Scikit-learn</span>
+      <span class="tag">TF-IDF</span>
+      <span class="tag">UMAP</span>
+      <span class="tag">K-Means</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag teal">KNN Peer Recommender</span>
+      <span class="tag teal">NLP Clustering</span>
+    </div>
+    <div class="hero-stat-row">
+      <div class="stat">
+        <div class="stat-num">1,720<span>+</span></div>
+        <div class="stat-label">Restaurants Analysed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Thematic Clusters</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">897</div>
+        <div class="stat-label">High-Potential Targets Identified</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">~52<span>%</span></div>
+        <div class="stat-label">Restaurants in Priority Tiers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Challenge</div>
+    <h2 class="section-title">What problem is<br>HungryHub facing?</h2>
+    <p class="section-body">
+      HungryHub is a restaurant booking platform operating across Southeast Asia. With thousands of
+      restaurant partners on their platform, their marketing team faces a critical allocation problem —
+      limited resources, unlimited restaurants, and no systematic way to tell which ones are genuinely
+      growing versus temporarily spiking.
+    </p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-card-icon">🎯</div>
+        <div class="problem-card-title">No systematic prioritisation</div>
+        <p>Marketing spend was allocated without a data-driven framework to identify which restaurants have the highest growth potential and would benefit most from campaigns.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">📊</div>
+        <div class="problem-card-title">Current metrics miss momentum</div>
+        <p>Looking at booking volume alone misses restaurants with exceptional growth rates but still-low absolute volume — the most promising emerging opportunities are invisible.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">🔁</div>
+        <div class="problem-card-title">No way to learn from peers</div>
+        <p>There was no mechanism to identify what marketing channels and campaigns worked for comparable restaurants, making each campaign decision effectively a fresh guess.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">📉</div>
+        <div class="problem-card-title">Poor ROI visibility</div>
+        <p>Without campaign uplift measurement across CRM, KOL, and Facebook channels, it was impossible to justify or optimise where to direct limited marketing resources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="section-inner">
+    <div class="section-eyebrow teal">Our Approach</div>
+    <h2 class="section-title">How we solve it</h2>
+    <p class="section-body">
+      We built a five-stage pipeline that transforms raw booking transactions, marketing campaign data,
+      and Google Analytics signals into a prioritised restaurant list with peer-validated strategy recommendations.
+    </p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-dot">⚡</div>
+        <div class="pipeline-name">Momentum Engine</div>
+        <div class="pipeline-desc">MoM + YoY growth signals, rolling averages, seasonal flags</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-dot">🗂️</div>
+        <div class="pipeline-name">NLP Clustering</div>
+        <div class="pipeline-desc">TF-IDF + UMAP + K-Means on reviews, names, and type tags</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-dot">🏆</div>
+        <div class="pipeline-name">Priority Scoring</div>
+        <div class="pipeline-desc">Growth + GA funnel + campaign responsiveness composite score</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-dot">🤝</div>
+        <div class="pipeline-name">Peer Recommender</div>
+        <div class="pipeline-desc">KNN on similarity distance → peer-validated campaign strategies</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-dot">📋</div>
+        <div class="pipeline-name">Strategy Brief</div>
+        <div class="pipeline-desc">AI-generated narrative with grounded deterministic fallback</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTRIBUTION -->
+<section id="contribution">
+  <div class="section-inner">
+    <div class="section-eyebrow">My Contribution</div>
+    <h2 class="section-title">What I built</h2>
+    <p class="section-body">
+      I owned two end-to-end components: the NLP clustering pipeline that groups restaurants by thematic
+      similarity, and the peer recommender system that surfaces evidence-backed marketing strategies
+      from comparable high-performing peers.
+    </p>
+ 
+    <div class="contrib-tabs">
+      <button class="tab-btn active" onclick="switchTab(event, 'clustering')">Clustering</button>
+      <button class="tab-btn" onclick="switchTab(event, 'peer')">Peer Recommender</button>
+    </div>
+ 
+    <!-- CLUSTERING TAB -->
+    <div id="tab-clustering" class="tab-content active">
+      <!-- Row 1: screenshot upload (left) | step-by-step (right) -->
+      <div class="contrib-layout">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <p>
+            Restaurants are grouped into 5 thematic clusters using a multi-source text pipeline.
+            Rather than clustering on metadata alone, the model reads what customers actually say —
+            then anchors those signals with restaurant name keywords and Google Places type tags at
+            higher weights to ensure structurally obvious categories (buffets, bars, cafes) are
+            placed correctly.
+          </p>
+          <!-- Screenshot upload slot
+          <div class="media-zone" id="zone-clustering-dash">
+            <div class="media-placeholder" onclick="document.getElementById('input-clustering-dash').click()">
+              <div class="media-placeholder-icon">🖥️</div>
+              <div class="media-placeholder-label">Clustering Dashboard Screenshot</div>
+              <div class="media-placeholder-hint">Upload a screenshot or video of the Streamlit clustering page</div>
+              <button class="upload-btn" type="button">Upload Image / Video</button>
+            </div>
+            <input type="file" id="input-clustering-dash" class="hidden-input" accept="image/*,video/*"
+              onchange="handleMedia('zone-clustering-dash', this)">
+            <div class="media-caption">Clustering Dashboard — Streamlit Page</div>
+          </div> -->
+        </div>
+ 
+        <!-- Steps on the right -->
+        <div class="contrib-text">
+          <h3>NLP Restaurant Clustering</h3>
+          <!-- <p>
+            Restaurants are grouped into 5 thematic clusters using a multi-source text pipeline.
+            Rather than clustering on metadata alone, the model reads what customers actually say —
+            then anchors those signals with restaurant name keywords and Google Places type tags at
+            higher weights to ensure structurally obvious categories (buffets, bars, cafes) are
+            placed correctly.
+          </p> -->
+          <div class="contrib-steps">
+            <div class="contrib-step">
+              <span class="step-num">01</span>
+              <p>Extract TF-IDF vectors from restaurant review text (1,000 features, 1–2 gram, weight ×1)</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num">02</span>
+              <p>Extract keyword signals from restaurant names — "bar", "buffet", "cafe", "omakase" (weight ×10)</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num">03</span>
+              <p>Encode Google Places API type tags — "buffet_restaurant", "cafe", "bar" (weight ×4)</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num">04</span>
+              <p>Aggregate to restaurant level via mean vector, L2-normalise, run K-Means (k=5)</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num">05</span>
+              <p>UMAP reduces to 2D for visualisation; (x, y) coordinates become the similarity metric for the peer recommender</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num">06</span>
+              <p>Manual name-match override logic corrects structurally obvious misassignments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Row 2: UMAP interactive chart — full width below -->
+      <div style="margin-top: 1.75rem;">
+        <div class="umap-frame-wrap">
+          <iframe
+            id="umap-iframe"
+            src="umap_clusters_interactive.html"
+            title="UMAP Cluster Visualisation"
+            scrolling="no"
+            onload="this.style.opacity=1"
+            onerror="showUmapFallback()"
+          ></iframe>
+ 
+          <!-- Fallback if browser blocks local iframe -->
+          <div id="umap-fallback" style="display:none;">
+            <div class="media-placeholder" style="min-height:420px;"
+              onclick="document.getElementById('umap-file-input').click()">
+              <div class="media-placeholder-icon">📊</div>
+              <div class="media-placeholder-label">Load UMAP Visualisation</div>
+              <div class="media-placeholder-hint">
+                Your browser blocked the automatic embed.<br>
+                Click to manually load <code style="color:var(--accent)">umap_clusters_interactive.html</code>
+              </div>
+              <button class="upload-btn" type="button">Select File</button>
+            </div>
+            <input type="file" id="umap-file-input" class="hidden-input" accept=".html"
+              onchange="loadUmapFile(this)">
+          </div>
+        </div>
+ 
+        <div class="umap-caption-bar">
+          <span class="umap-label">UMAP 2D Embedding — 5 Clusters · Interactive Plotly</span>
+          <a id="umap-open-link" href="umap_clusters_interactive.html" target="_blank"
+            class="umap-open-btn">Open full screen ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PEER RECOMMENDER TAB -->
+    <div id="tab-peer" class="tab-content">
+      <div class="contrib-layout">
+        <div class="contrib-text">
+          <h3>Peer-Based Strategy Recommender</h3>
+          <p>
+            The peer recommender finds the K most similar restaurants using the UMAP coordinates
+            from clustering, then aggregates the historical campaign outcomes of those peers
+            to surface evidence-backed strategies ranked by peer-validated uplift.
+          </p>
+          <div class="contrib-steps">
+            <div class="contrib-step">
+              <span class="step-num teal">01</span>
+              <p>Filter peer pool to Rising Stars and Established Players with recorded campaign data</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num teal">02</span>
+              <p>Compute Euclidean distance on standardised (x, y, gmv_per_view) features; apply same-cluster bonus (−0.5) and momentum bonus (−0.5)</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num teal">03</span>
+              <p>Select top-K nearest peers; fall back to other segments if not enough high-momentum peers exist</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num teal">04</span>
+              <p>Assign each peer a similarity weight = 1 / (distance + ε); closer peers contribute more to strategy scores</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num teal">05</span>
+              <p>Aggregate peer campaigns by (strategy_name, channel): median uplift, median ROI, peer count, total similarity weight</p>
+            </div>
+            <div class="contrib-step">
+              <span class="step-num teal">06</span>
+              <p>Score = uplift×100 + ROI×50 + log(sim_weight)×20 + reliability_bonus×30; diversify across funnel stages</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <video width="640" height="360" controls>
+                <source src="Peer Recommender.mov" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+          </div>
+
+          <!-- <div class="media-zone" id="zone-peer-2">
+            <div class="media-placeholder" onclick="document.getElementById('input-peer-2').click()">
+              <div class="media-placeholder-icon">📋</div>
+              <div class="media-placeholder-label">Strategy Brief / AI Narrative</div>
+              <div class="media-placeholder-hint">Upload a screenshot of the grounded brief or AI-generated playbook</div>
+              <button class="upload-btn teal" type="button">Upload Image</button>
+            </div>
+            <input type="file" id="input-peer-2" class="hidden-input" accept="image/*,video/*"
+              onchange="handleMedia('zone-peer-2', this)">
+            <div class="media-caption">AI Strategy Narrative — Peer Evidence</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BANGKOK -->
+<section id="bangkok">
+  <div class="section-inner">
+    <div class="section-eyebrow teal">The Experience</div>
+    <h2 class="section-title">Presenting in Bangkok</h2>
+    <p class="bkk-intro">
+      Our team flew to Bangkok to present our findings directly to HungryHub's team.
+      It was an opportunity to walk real stakeholders through the dashboard, explain
+      the methodology, and receive live feedback on what mattered most to the business.
+    </p>
+
+    <div class="bkk-photo-grid">
+      <!-- Slot 1 -->
+      <div class="media-zone" id="zone-bkk-1">
+        <img src="HungryHubPresentation.jpg" 
+            alt="HungryHub HQ — Bangkok Presentation"
+            style="width:100%; height:320px; object-fit:cover; display:block;">
+        <div class="media-caption">HungryHub HQ — Bangkok Presentation</div>
+      </div>
+
+      <!-- Slot 2 -->
+      <div class="media-zone" id="zone-bkk-2">
+        <img src="tuktuk.jpg" 
+            alt="Tuk tuk"
+            style="width:100%; height:320px; object-fit:cover; display:block;">
+        <div class="media-caption">Our group riding the Tuk tuk, going on a food tour</div>
+      </div>
+
+      <!-- Slot 3 -->
+      <div class="media-zone" id="zone-bkk-3">
+        <img src="Buddha.jpg" 
+            alt="Buddha"
+            style="width:100%; height:320px; object-fit:cover; display:block;">
+        <div class="media-caption">Tallest statue of Buddha at Hidden bangkok tour</div>
+      </div>
+
+      <!-- Slot 4 -->
+      <div class="media-zone" id="zone-bkk-4">
+        <img src="redmango.jpg" 
+            alt="Red Mango"
+            style="width:100%; height:320px; object-fit:cover; display:block;">
+        <div class="media-caption">1st time seeing & trying Red Mango</div>
+      </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-text">Jaden &nbsp;·&nbsp; IS455 Data Analytics Project &nbsp;·&nbsp; SMU 2026</div>
+  <a class="footer-link" href="https://github.com/liyunling2/OPE" target="_blank" rel="noopener">
+    github.com/liyunling2/OPE ↗
+  </a>
+</footer>
+
+<script src="hungryhub.js"></script>
+
+</body>
+</html>
